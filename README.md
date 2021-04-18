@@ -4,7 +4,4 @@ Cooking is a joy, especially during covid. Finding recipes doesn't spark joy how
 
 Recifree, is a simple, fast, and ad-free. Start by creating your own profile. Add your favorite recipes. Share them with friends or keep them as your personal recipe database.
 
-Created with love by making recifree completely open-source.
-
-- Create your own profile to store your own recipes.
-- Share your recipes with friends.
+*Created with love by making recifree completely open-source.*
