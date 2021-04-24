@@ -1,12 +1,16 @@
 # Recifree
 
-Recifree, is a **simple**, **fast**, and **ad-free**. Start by creating your own profile. 
-Add your favorite recipes. Share them with friends or keep them as your personal recipe database.
+Recifree is an **open-source**, **fast**, and **ad-free** recipe website.
+
+1. Start by creating your own profile. 
+1. Add your favorite recipes. 
+1. Share them with friends or keep them as your personal recipe database.
+
+## Motivation
 
 Cooking is a joy, especially during covid. Finding recipes doesn't spark joy however. I 
-created Recifree because I'm annoyed with *long* food blog stories and recipes sites filled to 
-the brim with ads.
-
+created Recifree because I'm annoyed with *long* food blog stories and recipes sites with
+so many annoying ads.
 
 *Completely open-source. Created with love to increase the joy of cooking.*
 
