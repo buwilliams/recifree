@@ -11,4 +11,7 @@ Recifree, is a **simple**, **fast**, and **ad-free**. Start by creating your own
 ```bash
 mkdir -p data/db
 docker compose up
+docker ps # grab container id from recifree_web image
+docker exec -it `container_id` /bin/bash
+% python manage.py createsuperuser # create super user
 ```
