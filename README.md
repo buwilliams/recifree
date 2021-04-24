@@ -41,3 +41,7 @@ python manage.py createsuperuser # create super user
 - Usually you should prefer performance over user-experience.
 - Keep pages and scenes lightweight with minimal functionality. This will aid in keeping the code maintainable.
 - General performance should be gained through caching.
+
+### Project Plans
+
+Project plans are tracks in Github issues. You can see the [project plans](https://github.com/buwilliams/recifree/issues?q=is%3Aissue+is%3Aopen+release) on Github issues.
