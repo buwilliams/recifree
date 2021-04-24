@@ -8,7 +8,7 @@ Recifree is an **open-source**, **fast**, and **ad-free** recipe website.
 
 ## Motivation
 
-Cooking is a joy, especially during covid. Finding recipes doesn't spark joy however. I 
+Cooking is a joy, especially during covid. Finding and sharing recipes doesn't spark joy however. I 
 created Recifree because I'm annoyed with *long* food blog stories and recipes sites with
 so many annoying ads.
 
