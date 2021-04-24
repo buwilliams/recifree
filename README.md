@@ -45,3 +45,5 @@ python manage.py createsuperuser # create super user
 ### Project Plans
 
 Project plans are tracked as standard GitHub issues. You can all see the open [project plan issues here](https://github.com/buwilliams/recifree/issues?q=is%3Aissue+is%3Aopen+release+version).
+
+Current work is happening on branch [release-1.0](https://github.com/buwilliams/recifree/tree/release-1.0)
