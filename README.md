@@ -19,7 +19,7 @@ so many annoying ads.
 ```bash
 mkdir -p data/db
 docker compose up
-docker ps # grab container id from recifree_web image
-docker exec -it `container_id` /bin/bash
-% python manage.py createsuperuser # create super user
+docker ps # grab Container ID from recifree_web image
+docker exec -it [Container ID] /bin/bash
+python manage.py createsuperuser # create super user
 ```
