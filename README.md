@@ -44,4 +44,4 @@ python manage.py createsuperuser # create super user
 
 ### Project Plans
 
-Project plans are tracks in Github issues. You can see the [project plans](https://github.com/buwilliams/recifree/issues?q=is%3Aissue+is%3Aopen+release) on Github issues.
+Project plans are tracks in Github issues. You can see the [project plans here](https://github.com/buwilliams/recifree/issues?q=is%3Aissue+is%3Aopen+release).
