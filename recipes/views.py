@@ -3,4 +3,5 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, 'recipes/index.html')
+    data = {"number": 53}
+    return render(request, 'recipes/index.html', data)
