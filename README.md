@@ -26,6 +26,7 @@ Recifree. The high-level goals are **simplicity** and **performance**.
 
 ### Getting started
 
+**Backend**
 ```bash
 mkdir -p data/db
 docker compose up
@@ -34,16 +35,29 @@ docker exec -it [Container ID] /bin/bash
 python manage.py createsuperuser # create super user
 ```
 
+**Frontend**
+```bash
+cd frontend
+yarn install
+yarn dev
+```
+
 ### Contributing Guidelines
 
-- Avoid frameworks. Use vanilla CSS, HTML, and JavaScript. This will ensure good performance.
+- Recifree uses [JAMStack](https://jamstack.org/) architecture.
+  - Directory `frontend` uses [Next.js](https://nextjs.org/docs/getting-started) and is hosting 
+    with [Netlify](https://www.netlify.com/).
+  - Root directory `.` uses Django and the hosting environment is still TBD. Suggestions?
+- All routes are written as JSON REST API calls.
 - Always be mobile friendly.
-- Usually you should prefer performance over user-experience.
 - Keep pages and scenes lightweight with minimal functionality. This will aid in keeping the code maintainable.
-- General performance should be gained through caching.
+- Most user generated content will use markdown to make development faster since we'll need to write less markup.
 
-### Project Plans
+### Project Management
 
-Project plans are tracked as standard GitHub issues. You can all see the open [project plan issues here](https://github.com/buwilliams/recifree/issues?q=is%3Aissue+is%3Aopen+release+version).
+Features, tasks, bugs, etc. are managed using standard GitHub issues. Active work is listed 
+on the [Recifree project page](https://github.com/buwilliams/recifree/projects/1) using standard
+GitHub projects.
 
-Current work is happening on branch [release-1.0](https://github.com/buwilliams/recifree/tree/release-1.0)
+Feel free to [open an issue](https://github.com/buwilliams/recifree/issues/new) with any 
+suggestions or questions you have.
