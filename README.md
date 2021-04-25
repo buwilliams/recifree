@@ -53,9 +53,11 @@ yarn dev
 - Keep pages and scenes lightweight with minimal functionality. This will aid in keeping the code maintainable.
 - Most user generated content will use markdown to make development faster since we'll need to write less markup.
 
-### Project Plans
+### Project Management
 
-Project plans are tracked as standard GitHub issues. You can all see 
-the open [project plan issues here](https://github.com/buwilliams/recifree/issues?q=is%3Aissue+is%3Aopen+release+version).
+Features, tasks, bugs, etc. are managed using standard GitHub issues. Active work is listed 
+on the [Recifree project page](https://github.com/buwilliams/recifree/projects/1) using standard
+GitHub projects.
 
-Current work is happening on branch [release-1.0](https://github.com/buwilliams/recifree/tree/release-1.0)
+Feel free to [open an issue](https://github.com/buwilliams/recifree/issues/new) with any 
+suggestions or questions you have.
