@@ -1,4 +1,4 @@
-import '../styles/globals.css'
+import '../styles/water.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

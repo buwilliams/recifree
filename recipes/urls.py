@@ -9,6 +9,6 @@ router.register(r'groups', views.GroupViewSet)
 router.register(r'recipes', views.RecipeViewSet)
 
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api/', include('rest_framework.urls', namespace='rest_framework'))
+    path(r'', include(router.urls)),
+    path(r'api/', include('rest_framework.urls', namespace='rest_framework'))
 ]
