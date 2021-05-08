@@ -45,8 +45,9 @@ python manage.py runserver 0.0.0.0:8000
 
 ### Contributing Guidelines
 
-- Keep the architecture simple (very light JS dependencies)
-- Mobile friendly
+- Keep the architecture simple.
+- Be mobile friendly.
+- Django templates create basic markup that we decorate with Vue and backend API requests. No JS or CSS bundler needed.
 
 ### Project Management
 
