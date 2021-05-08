@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Recipes delivered fast, ad-free, open-source.</title>
+    <link rel="stylesheet"
+          href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
+          integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
+          crossorigin="anonymous">
+    {% block css %}
+    {% endblock %}
+</head>
+<body>
+<header class="pure-g">
+    <div class="pure-u-1-2">
+    {% block header %}
+        <h1>Recifree</h1>
+        <h2>Recipes delivered ad-free, fast, and <a href="https://github.com/buwilliams/recifree" target="_blank">open-source</a>.</h2>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+        </nav>
+    {% endblock %}
+    </div>
+</header>
+<main class="">
+    {% block main %}
+        <p>Base Template</p>
+    {% endblock %}
+</main>
+<footer>
+    {% block footer %}
+        <p>tbd</p>
+    {% endblock %}
+</footer>
+
+{% block global_scripts %}
+<!--<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+{% endblock %}
+
+{% block scripts %}
+{% endblock %}
+
+ </body>
+ </html>

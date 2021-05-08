@@ -1,9 +1,14 @@
 from django.contrib.auth.models import User, Group
+from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework import permissions
 
 from recipes.models import Recipe
 from recipes.serializers import UserSerializer, GroupSerializer, RecipeSerializer
+
+
+def index(response):
+    return render(response, "recipes/index.html", {})
 
 
 class UserViewSet(viewsets.ModelViewSet):
