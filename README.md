@@ -1,6 +1,6 @@
 # Recifree
 
-Recifree is an **open-source**, **fast**, and **ad-free** recipe website.
+Recifree is an **fast**, **ad-free**, and **open-source** recipe website.
 
 1. Start by creating your own profile. 
 1. Add your favorite recipes. 
