@@ -47,6 +47,7 @@ new Vue({
           .then(data => {
               console.log(data);
               this.recipes = data;
+              if(data.length > 0) this.selectedIndex = 0;
           });
     },
     computed: {
