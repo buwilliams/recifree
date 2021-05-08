@@ -37,11 +37,14 @@ nav a:hover {
 }
 
 main {
-    width: 75%;
-    margin: 0 auto;
+    margin: 0 2rem;
     padding: 2rem;
     background-color: white;
     border-bottom-right-radius: 1rem;
     border-bottom-left-radius: 1rem;
     min-height: 10rem;
+}
+
+footer {
+    margin-top: 2rem;
 }

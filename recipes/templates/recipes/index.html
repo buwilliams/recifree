@@ -10,7 +10,7 @@
     <div v-if="selectedRecipe">
         <h1>[[ selectedRecipe.title ]]</h1>
 
-        <p><img :src=[selectedRecipe.photo_url] width="300" /></p>
+        <p><img :src=[selectedRecipe.photo_url] width="300" height="300" /></p>
 
         <h2>Ingredients</h2>
         <p v-html="ingredients"></p>
