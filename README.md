@@ -26,12 +26,21 @@ Recifree. The high-level goals are **simplicity** and **performance**.
 
 ### Getting started
 
+**Setup**
+
 ```bash
 mkdir -p data/db
 docker compose up
 docker ps # grab Container ID from recifree_web image
 docker exec -it [Container ID] /bin/bash
 python manage.py createsuperuser # create super user
+```
+
+**Start**
+```bash
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver 0.0.0.0:8000
 ```
 
 ### Contributing Guidelines
