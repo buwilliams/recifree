@@ -1,0 +1,36 @@
+{% extends 'recipes/base.html' %}
+{% load markdown_extras %}
+
+{% block main %}
+<div id="app">
+    <div v-if="selectedRecipe">
+        <h1>{{ recipe.title }}</h1>
+
+        <p><img src="{{ recipe.photo_url }}" width="300" height="300" /></p>
+
+        <h2>Ingredients</h2>
+        <p>{{ recipe.ingredients | markdown | safe }}</p>
+
+        <h2>Instructions</h2>
+        <p>{{ recipe.instructions | markdown | safe }}</p>
+
+        <h2>Description</h2>
+        <p>{{ recipe.description | markdown | safe }}</p>
+
+        <h2>Video</h2>
+        <p><a href="{{ recipe.video_url}}" target="_blank">Click here to open the video.</a></p>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/marked@2.0.3/lib/marked.js"></script>
+{% endblock %}
+
+{% block css %}
+<style>
+h2 {
+    border-bottom: solid 1px #333;
+}
+</style>
+{% endblock %}
