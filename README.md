@@ -2,10 +2,6 @@
 
 Recifree is a **fast**, **ad-free**, and **open-source** recipe website.
 
-1. Start by creating your own profile. 
-1. Add your favorite recipes. 
-1. Share them with friends or keep them as your personal recipe database.
-
 ## Motivation
 
 Cooking is a joy, especially during Covid. Finding and sharing recipes doesn't spark joy however. I 
@@ -16,13 +12,18 @@ so many annoying ads.
 
 ## For Users of Recifree
 
-Our public site is not ready yet since the basic project is under construction. Thanks 
-for your interest!
+How to use Recifree:
+1. Start by creating your profile. This is where all your recipes will be saved.
+1. Add your recipes.
+1. Share your recipes with friends, ad-free.
+
+Recifree is not live at this time since it's under construction. Thanks for your interest!
 
 ## For Developers
 
-Below you will find information on setting up your local environment and contributing to 
-Recifree. The high-level goals are **simplicity** and **performance**.
+Recifree high-level goals are **simplicity** and **performance**. We are making saving
+and sharing recipes an excellent experience. I don't expect users to spend a large amount 
+of time on this site. Users should be able to get what they need quickly.
 
 ### Getting started
 
