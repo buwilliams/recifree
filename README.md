@@ -27,7 +27,6 @@ Recifree. The high-level goals are **simplicity** and **performance**.
 ### Getting started
 
 **Setup**
-
 ```bash
 mkdir -p data/db
 docker compose up
@@ -45,15 +44,17 @@ python manage.py runserver 0.0.0.0:8000
 
 ### Contributing Guidelines
 
+- Features, tasks, and bugs are managed using standard GitHub issues. Active work is listed
+  on the [Recifree project page](https://github.com/buwilliams/recifree/projects/1) using standard
+  GitHub projects.
+- [Open an issue](https://github.com/buwilliams/recifree/issues/new) with any
+  suggestions or questions you have.
+- Pull requests should be squashed during merge.
+
+### Code Guidelines
+
 - Keep the architecture simple.
 - Be mobile friendly.
-- Django templates create basic markup that we decorate with Vue and backend API requests. No JS or CSS bundler needed.
-
-### Project Management
-
-Features, tasks, bugs, etc. are managed using standard GitHub issues. Active work is listed 
-on the [Recifree project page](https://github.com/buwilliams/recifree/projects/1) using standard
-GitHub projects.
-
-Feel free to [open an issue](https://github.com/buwilliams/recifree/issues/new) with any 
-suggestions or questions you have.
+- Use Django templates for search engine friendly pages. 
+- Decorate templates with Vue for dynamic content and forms.
+- Vue should use Django API endpoints.
