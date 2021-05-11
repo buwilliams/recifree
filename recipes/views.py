@@ -15,7 +15,7 @@ class Website(View):
 
     def recipe(self, recipe_id):
         recipe = Recipe.objects.get(id=recipe_id)
-        return render(self, 'recipes/recipe.html', {'recipe': recipe})
+        return render(self, 'recipes/recipe_view.html', {'recipe': recipe})
 
     def new(self):
         return render(self, 'recipes/recipe_new.html', {})
