@@ -10,11 +10,15 @@ from recipes.serializers import UserSerializer, GroupSerializer, RecipeSerialize
 
 class Website(View):
     def index(self):
-        return render(self, "recipes/index.html", {})
+        all_recipes = Recipe.objects.all()
+        return render(self, 'recipes/index.html', {'all_recipes': all_recipes})
 
-    def recipe(self, id):
-        recipe = Recipe.objects.get(id=id)
-        return render(self, "recipes/recipe.html", {"recipe": recipe})
+    def recipe(self, recipe_id):
+        recipe = Recipe.objects.get(id=recipe_id)
+        return render(self, 'recipes/recipe.html', {'recipe': recipe})
+
+    def new(self):
+        return render(self, 'recipes/recipe_new.html', {})
 
 
 class UserViewSet(viewsets.ModelViewSet):

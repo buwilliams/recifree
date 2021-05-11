@@ -1,0 +1,122 @@
+{% extends 'recipes/base.html' %}
+{% load static %}
+
+{% block main %}
+<div id="app">
+    <h1>New Recipe</h1>
+    <div class="row">
+        <label for="title">Title</label><br>
+        <input id="title" v-model="title"><br>
+        <div class="error">[[ title_error ]]</div>
+    </div>
+    <div class="row">
+        <label for="photo_url">Photo URL</label><br>
+        <input id="photo_url" v-model="photo_url"><br>
+        <div class="error">[[ photo_url_error ]]</div>
+    </div>
+    <div class="row">
+        <label for="ingredients">Ingredients</label><br>
+        <textarea id="ingredients" v-model="ingredients"></textarea><br>
+        <div class="error">[[ ingredients_error ]]</div>
+    </div>
+    <div class="row">
+        <label for="instructions">Instructions</label><br>
+        <textarea id="instructions" v-model="instructions"></textarea><br>
+        <div class="error">[[ instructions_error ]]</div>
+    </div>
+    <div class="row">
+        <label for="description">Description</label><br>
+        <textarea id="description" v-model="description"></textarea><br>
+        <div class="error">[[ description_error ]]</div>
+    </div>
+    <div class="row">
+        <label for="video_url">Video URL</label><br>
+        <input id="video_url" v-model="video_url"><br>
+        <div class="error">[[ video_url_error ]]</div>
+    </div>
+    <div class="row">
+        <button @click="create()">Create</button>
+        <button @click="cancel()">Cancel</button>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://unpkg.com/marked@2.0.3/lib/marked.js"></script>
+<script src="{% static 'js/api.js' %}"></script>
+<script type="text/javascript">
+new Vue({
+    delimiters: ['[[', ']]'],
+    el: '#app',
+    data() {
+        return {
+            title: '',
+            photo_url: '',
+            ingredients: '',
+            instructions: '',
+            description: '',
+            video_url: '',
+            title_error: '',
+            photo_url_error: '',
+            ingredients_error: '',
+            instructions_error: '',
+            description_error: '',
+            video_url_error: '',
+        };
+    },
+    methods: {
+        create() {
+            this.clear();
+            const url = '/api/recipes/';
+            const data = {
+                author: location.origin + '/api/users/1/',
+                title: this.title,
+                photo_url: this.photo_url,
+                ingredients: this.ingredients,
+                instructions: this.instructions,
+                description: this.description,
+                video_url: this.video_url
+            };
+            Api.post(url, data).then(response => {
+                if(response.ok === false) {
+                    response.json().then(body => {
+                        for (let k in body) {
+                            this[k + '_error'] = body[k].join(' ');
+                        }
+                    })
+                } else {
+                    response.json().then(body => {
+                        location.href = '/recipes/' + body.pk;
+                    });
+                }
+            })
+        },
+        cancel() {
+            location.href = "/";
+        },
+        clear() {
+            this.title_error = '';
+            this.photo_url_error = '';
+            this.ingredients_error = '';
+            this.instructions_error = '';
+            this.description_error = '';
+            this.video_url_error = '';
+        }
+    }
+})
+</script>
+{% endblock %}
+
+{% block css %}
+<style>
+h2 {
+    border-bottom: solid 1px #333;
+}
+.row {
+    margin-top: 0.5rem;
+}
+.error {
+    color: red;
+}
+</style>
+{% endblock %}

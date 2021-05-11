@@ -1,36 +1,63 @@
 {% extends 'recipes/base.html' %}
+{% load static %}
 {% load markdown_extras %}
 
 {% block main %}
 <div id="app">
-    <div v-if="selectedRecipe">
-        <h1>{{ recipe.title }}</h1>
+    <h1>{{ recipe.title }}</h1>
 
-        <p><img src="{{ recipe.photo_url }}" width="300" height="300" /></p>
+    <p><img src="{{ recipe.photo_url }}" width="300" height="300" /></p>
 
-        <h2>Ingredients</h2>
-        <p>{{ recipe.ingredients | markdown | safe }}</p>
+    <h2>Ingredients</h2>
+    <p>{{ recipe.ingredients | markdown | safe }}</p>
 
-        <h2>Instructions</h2>
-        <p>{{ recipe.instructions | markdown | safe }}</p>
+    <h2>Instructions</h2>
+    <p>{{ recipe.instructions | markdown | safe }}</p>
 
-        <h2>Description</h2>
-        <p>{{ recipe.description | markdown | safe }}</p>
+    <h2>Description</h2>
+    <p>{{ recipe.description | markdown | safe }}</p>
 
-        <h2>Video</h2>
-        <p><a href="{{ recipe.video_url}}" target="_blank">Click here to open the video.</a></p>
-    </div>
+    <h2>Video</h2>
+    <p><a href="{{ recipe.video_url}}" target="_blank">Click here to open the video.</a></p>
+
+    <button class="delete" @click="remove({{ recipe.id }})">Delete</button>
 </div>
 {% endblock %}
 
 {% block scripts %}
 <script src="https://unpkg.com/marked@2.0.3/lib/marked.js"></script>
+<script src="{% static 'js/api.js' %}"></script>
+<script type="text/javascript">
+new Vue({
+    delimiters: ['[[', ']]'],
+    el: '#app',
+    methods: {
+        remove(id) {
+            const confirmed = confirm('Are you sure you want to delete this recipe?')
+            if(confirmed) {
+                Api.delete('/api/recipes/'+id+'/').then(() => {
+                    location.href='/';
+                })
+            }
+        }
+    }
+})
+</script>
 {% endblock %}
 
 {% block css %}
 <style>
 h2 {
     border-bottom: solid 1px #333;
+}
+
+.delete {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border: solid 1px #333;
+    border-radius: 0.5rem;
 }
 </style>
 {% endblock %}

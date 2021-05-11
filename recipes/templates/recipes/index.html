@@ -2,85 +2,13 @@
 
 {% block main %}
 <div id="app">
+    <h1>All Recipes</h1>
     <ul>
-        <li v-for="(recipe, idx) in recipes">
-            <a href="#" @click.prevent="select(idx)">[[ recipe.title ]]</a>
+        {% for recipe in all_recipes %}
+        <li>
+            <a href="/recipes/{{ recipe.id }}">{{ recipe.title }}</a>
         </li>
+        {% endfor %}
     </ul>
-    <div v-if="selectedRecipe">
-        <h1>[[ selectedRecipe.title ]]</h1>
-
-        <p><img :src=[selectedRecipe.photo_url] width="300" height="300" /></p>
-
-        <h2>Ingredients</h2>
-        <p v-html="ingredients"></p>
-
-        <h2>Instructions</h2>
-        <p v-html="instructions"></p>
-
-        <h2>Description</h2>
-        <p v-html="description"></p>
-
-        <h2>Video</h2>
-        <p><a :href=[selectedRecipe.video_url] target="_blank">Click here to open the video.</a></p>
-    </div>
 </div>
-{% endblock %}
-
-{% block scripts %}
-<script src="https://unpkg.com/marked@2.0.3/lib/marked.js"></script>
-<script type="text/javascript">
-new Vue({
-    delimiters: ['[[', ']]'],
-    el: '#app',
-    data() {
-        return {
-            message: 'Hello Recifree!',
-            recipes: [],
-            selectedIndex: -1,
-        }
-    },
-    mounted() {
-        let url = '/api/recipes/?format=json';
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-              console.log(data);
-              this.recipes = data;
-              if(data.length > 0) this.selectedIndex = 0;
-          });
-    },
-    computed: {
-        selectedRecipe() {
-            if(this.selectedIndex === -1) return null;
-            return this.recipes[this.selectedIndex];
-        },
-        description() {
-            if(!this.selectedRecipe) return null;
-            return marked(this.selectedRecipe.description);
-        },
-        ingredients() {
-            if(!this.selectedRecipe) return null;
-            return marked(this.selectedRecipe.ingredients);
-        },
-        instructions() {
-            if(!this.selectedRecipe) return null;
-            return marked(this.selectedRecipe.instructions);
-        },
-    },
-    methods: {
-        select(index) {
-            this.selectedIndex = index;
-        }
-    }
-})
-</script>
-{% endblock %}
-
-{% block css %}
-<style>
-h2 {
-    border-bottom: solid 1px #333;
-}
-</style>
 {% endblock %}
