@@ -1,4 +1,4 @@
-# Recifree
+![Recifree](recipes/static/images/logo-github.jpg)
 
 Recifree is a **fast**, **ad-free**, and **open-source** recipe website.
 
