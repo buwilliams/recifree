@@ -1,6 +1,6 @@
 ![Recifree](recipes/static/images/logo-github.jpg)
 
-Fast, ad-free, and open-source recipes for saving and sharing.
+Recifree is recipe website that's **fast**, **ad-free**, and **open-source**.
 
 ## Motivation
 
