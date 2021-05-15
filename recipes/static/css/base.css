@@ -1,0 +1,48 @@
+:root {
+    --black: #000000;
+    --tan: #f1f2eb;
+    --orange: #f99e49;
+    --red: #f53452;
+    --green: #408556;
+    --gray: #3c4147;
+}
+
+body {
+    background-color: var(--tan);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+}
+
+nav {
+    display: flex;
+    background-color: var(--green);
+    color: #fff;
+    padding: 1rem 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    min-height: 10rem;
+    padding: 0 1rem;
+}
+
+footer {
+    margin-top: 2rem;
+}
+
+a {
+    text-decoration: none;
+}

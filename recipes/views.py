@@ -20,6 +20,9 @@ class Website(View):
     def new(self):
         return render(self, 'recipes/recipe_new.html', {})
 
+    def homepage(self):
+        return render(self, 'recipes/homepage.html', {})
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """

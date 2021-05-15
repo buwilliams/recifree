@@ -9,7 +9,7 @@
           integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
           crossorigin="anonymous">
     {% load static %}
-    <link rel="stylesheet" href="{% static 'recipes/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     {% block css %}
@@ -19,13 +19,14 @@
 <header>
     {% block header %}
     <nav>
-        <input class="search" type="text" placeholder="Search..." />
-        <a href="/">Recipes</a>
-        <a href="/recipes/new">New</a>
+        <a href="/">Home</a>
+        <a href="/">Browse</a>
+        <a href="/">Search</a>
+        <a href="/">Sign up</a>
     </nav>
     {% endblock %}
 </header>
-<main>
+<main id="app">
     {% block main %}
         <p>Base Template</p>
     {% endblock %}
