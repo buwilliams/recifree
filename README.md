@@ -1,12 +1,12 @@
-![Recifree](recipes/static/images/logo-github.jpg)
+![Recifree](recipes/static/images/logo-400.png)
 
-Recifree is recipe website that's **fast**, **ad-free**, and **open-source**.
+Recifree is a recipe website that's **fast**, **ad-free**, and **open-source**.
 
 ## Motivation
 
-Cooking is a joy, especially during Covid. Finding and sharing recipes doesn't spark joy however. I 
+Cooking is a joy. Finding and sharing recipes doesn't spark joy however. I 
 created Recifree because I'm annoyed with *long* food blog stories and recipes sites with
-so many annoying ads.
+so many annoying ads. It's open-source because like cooking recipes belong to the people.
 
 *Completely open-source. Created with love to increase the joy of cooking.*
 
@@ -25,23 +25,32 @@ Recifree high-level goals are **simplicity** and **performance**. We are making 
 and sharing recipes an excellent experience. I don't expect users to spend a large amount 
 of time on this site. Users should be able to get what they need quickly.
 
+## Tech Stack
+
+- [Postgres](https://www.postgresql.org/) database
+- [Django](https://www.djangoproject.com/) backend server
+- [Django templates](https://docs.djangoproject.com/en/3.2/topics/templates/) for rendering server-side content
+- [Vue.js](https://vuejs.org/) dynamic frontend
+- [Bulma](https://bulma.io/) css framework
+- [Font Awesome](https://fontawesome.com/) icon framework
+
 ### Getting started
 
 **Setup**
 ```bash
-mkdir -p data/db
-docker compose up
+mkdir -p data/db # create db directory
+docker compose up # sets up server and runs migrations
 docker ps # grab Container ID from recifree_web image
 docker exec -it [Container ID] /bin/bash
-python manage.py createsuperuser # create super user
+python manage.py createsuperuser # create super user for local dev
+exit
 ```
 
-**Start**
-```bash
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver 0.0.0.0:8000
-```
+**URLs**
+
+- [/admin](http://localhost:8000/admin) - django admin UI
+- [/api](htpp://localhost:8000/api) - rest API UI
+- [/](http://localhost:8000/) - recifree app
 
 ### Contributing Guidelines
 
@@ -56,6 +65,7 @@ python manage.py runserver 0.0.0.0:8000
 
 - Keep the architecture simple.
 - Be mobile friendly.
-- Use Django templates for search engine friendly pages. 
+- Use Django templates for initial page load so that it's search engine friendly. 
 - Decorate templates with Vue for dynamic content and forms.
 - Vue should use Django API endpoints.
+- Do not use Django forms instead use Vue with JavaScript Fetch API.
