@@ -25,3 +25,17 @@ div.shadow {
 .is-text-color-white {
     color: #fff;
 }
+
+span.number {
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+    color: #fff;
+    height: 3rem;
+    font-weight: bold;
+    padding-top: 0.5rem;
+}
+
+main .content {
+    min-height: 7rem;
+}
