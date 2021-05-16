@@ -4,40 +4,114 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recipes delivered fast, ad-free, open-source.</title>
-    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
     {% load static %}
-    <link href="https://unpkg.com/css.gg/icons/all.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
 </head>
 <body>
 
-<header>
-    <nav>
-        <div class="main-menu">
-            <a href="#">Home</a>
-            <a href="#">Browse</a>
-        </div>
-        <div class="auth">
-            <a href="#"><i class="gg-lock-unlock"></i> Create account</a>
-            <a href="#"><i class="gg-lock-unlock"></i> Login</a>
-        </div>
-    </nav>
-</header>
-<main>
-    <div class="process">
-        <div class="card"></div>
-    </div>
-    <div class="recipes">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
-    </div>
-</main>
-<footer>
-    <a href="https://github.com/buwilliams/recifree">Open-source</a>, MIT License, 2021
-</footer>
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <img src="{% static 'images/logo-400.png' %}">
+        </a>
 
- </body>
- </html>
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+        </a>
+    </div>
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <a class="navbar-item">
+                <span class="icon-text">
+                    <span class="icon">
+                        <i class="fas fa-list"></i>
+                    </span>
+                    <span>Browse</span>
+                </span>
+            </a>
+            <a class="navbar-item">
+                <span class="icon-text">
+                    <span class="icon">
+                        <i class="fas fa-address-card"></i>
+                    </span>
+                    <span>Your Recipes</span>
+                </span>
+            </a>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-user-plus"></i>
+                            </span>
+                            <span>Create your account</span>
+                        </span>
+                    </a>
+                    <a class="button">
+                        <span class="icon-text">
+                            <span class="icon">
+                                <i class="fas fa-lock"></i>
+                            </span>
+                            <span>Login</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="container">
+    <section class="columns is-centered">
+        <div class="column homepage-hero" style="">
+            <div class="shadow">
+                <img src="{% static 'images/logo-white-400.png' %}"><br>
+                <span class="is-medium is-text-color-white">
+                    Recipes delivered fast, ad-free, and open-source.
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="columns">
+        <div class="column is-one-third">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-one-third">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column is-one-third">
+            <div class="card">
+                <div class="card-content">
+                    <div class="content">
+                        Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
