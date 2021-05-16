@@ -33,6 +33,7 @@ of time on this site. Users should be able to get what they need quickly.
 - [Vue.js](https://vuejs.org/) dynamic frontend
 - [Bulma](https://bulma.io/) css framework
 - [Font Awesome](https://fontawesome.com/) icon framework
+- [Pexels](https://www.pexels.com/) stock photos
 
 ### Getting started
 
