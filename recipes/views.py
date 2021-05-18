@@ -8,20 +8,28 @@ from recipes.models import Recipe
 from recipes.serializers import UserSerializer, GroupSerializer, RecipeSerializer
 
 
-class Website(View):
-    def index(self):
+class Website:
+    @staticmethod
+    def index(request):
+        is_authenticated = request.user.is_authenticated
         all_recipes = Recipe.objects.all()
-        return render(self, 'recipes/index.html', {'all_recipes': all_recipes})
+        return render(request, 'recipes/index.html', {
+            'all_recipes': all_recipes,
+            'is_authenticated': is_authenticated,
+        })
 
-    def recipe(self, recipe_id):
-        recipe = Recipe.objects.get(id=recipe_id)
-        return render(self, 'recipes/recipe_view.html', {'recipe': recipe})
+    @staticmethod
+    def recipe(request, recipe_id):
+        recipe_object = Recipe.objects.get(id=recipe_id)
+        return render(request, 'recipes/recipe_view.html', {'recipe': recipe_object})
 
-    def new(self):
-        return render(self, 'recipes/recipe_new.html', {})
+    @staticmethod
+    def new(request):
+        return render(request, 'recipes/recipe_new.html', {})
 
-    def homepage(self):
-        return render(self, 'recipes/homepage.html', {})
+    @staticmethod
+    def homepage(request):
+        return render(request, 'recipes/homepage.html', {})
 
 
 class UserViewSet(viewsets.ModelViewSet):

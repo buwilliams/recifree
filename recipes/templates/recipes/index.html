@@ -6,6 +6,9 @@
     <img width="60%" src="{% static 'images/logo-400.png' %}">
     <div><strong>Recipes</strong> ad-free, fast, and open-source.</div>
     <a class="button" href="#">Sign up</a>
+    {% if is_authenticated %}
+        You are signed in.
+    {% endif %}
 </div>
 <div class="how">
     <div class="number"></div>
