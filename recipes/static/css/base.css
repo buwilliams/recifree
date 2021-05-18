@@ -16,35 +16,3 @@ body {
 nav.navbar {
     background-color: #f5f5f5;
 }
-
-div.homepage-hero {
-    text-align:center;
-    background-image: url('/static/images/table.png');
-    background-attachment: local;
-    background-position: center;
-    padding: 10rem 0;
-}
-
-div.shadow {
-    background-color: rgba(0, 0, 0, 0.7);
-    border-radius: 1rem;
-    padding: 2rem 0;
-}
-
-.is-text-color-white {
-    color: #fff;
-}
-
-span.number {
-    background-color: #000;
-    border-radius: 50%;
-    display: inline-block;
-    color: #fff;
-    height: 3rem;
-    font-weight: bold;
-    padding-top: 0.5rem;
-}
-
-main .content {
-    min-height: 7rem;
-}

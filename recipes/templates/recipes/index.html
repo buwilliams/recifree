@@ -12,58 +12,23 @@
             </div>
         </div>
     </section>
-    <section class="columns">
-        <div class="column is-one-third">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <div class="columns">
-                            <div class="column is-narrow">
-                                <span class="number">1</span>
-                            </div>
-                            <div class="column">
-                                Start by creating your profile. This is where all your recipes will be saved.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <section class="columns is-mobile is-multiline is-centered mt-6">
+        <div class="column is-one-third has-text-centered">
+            <span class="step">1</span><br>
+            <span class="is-size-4">Create your profile.</span>
         </div>
-        <div class="column is-one-third">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <div class="columns">
-                            <div class="column is-narrow">
-                                <span class="number">2</span>
-                            </div>
-                            <div class="column">
-                                Add your favorite recipes to your profile.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="column is-one-third has-text-centered">
+            <span class="step">2</span><br>
+            <span class="is-size-4">Add your favorite recipes to your profile.</span>
         </div>
-        <div class="column is-one-third">
-            <div class="card">
-                <div class="card-content">
-                    <div class="content is-medium">
-                        <div class="columns">
-                            <div class="column is-narrow">
-                                <span class="number">3</span>
-                            </div>
-                            <div class="column">
-                                Share your recipes with friends, ad-free.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="column is-one-third has-text-centered">
+            <span class="step">3</span><br>
+            <span class="is-size-4">Share your recipes with friends.</span>
         </div>
     </section>
-    <section>
-        <h1>Recent additions</h1>
+    <hr>
+    <section class="list">
+        <h1 class="is-size-4">Recent additions</h1>
         <ul>
             {% for recipe in all_recipes %}
                 <li>
@@ -72,4 +37,43 @@
             {% endfor %}
         </ul>
     </section>
+{% endblock %}
+
+{% block css %}
+<style type="text/css">
+div.homepage-hero {
+    text-align:center;
+    background-image: url('/static/images/table.png');
+    background-attachment: local;
+    background-position: center;
+    padding: 10rem 0;
+}
+
+div.shadow {
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 1rem;
+    padding: 2rem 0;
+}
+
+.is-text-color-white {
+    color: #fff;
+}
+
+main .content {
+    min-height: 7rem;
+}
+
+span.step {
+    background-color: #000;
+    border-radius: 50%;
+    display: inline-block;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 1rem 1.75rem;
+}
+.list {
+    min-height: 10rem;
+}
+</style>
 {% endblock %}
