@@ -4,45 +4,102 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Recipes delivered fast, ad-free, open-source.</title>
-    <link rel="stylesheet"
-          href="https://unpkg.com/purecss@2.0.6/build/pure-min.css"
-          integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5"
-          crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     {% block css %}
     {% endblock %}
 </head>
 <body>
+
 <header>
     {% block header %}
-    <nav>
-        <a href="/">Home</a>
-        <a href="/">Browse</a>
-        <a href="/">Search</a>
-        <a href="/">Sign up</a>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="{% static 'images/logo-400.png' %}">
+            </a>
+
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item">
+                <span class="icon-text">
+                    <span class="icon">
+                        <i class="fas fa-list"></i>
+                    </span>
+                    <span>Browse</span>
+                </span>
+                </a>
+                <a class="navbar-item">
+                <span class="icon-text">
+                    <span class="icon">
+                        <i class="fas fa-address-card"></i>
+                    </span>
+                    <span>Your Recipes</span>
+                </span>
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        {% if is_authenticated %}
+                            <a class="button" href="/accounts/logout">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                </span>
+                                <span>Logout</span>
+                            </span>
+                            </a>
+                        {% else %}
+                            <a class="button is-primary">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fas fa-user-plus"></i>
+                                </span>
+                                <span>Create your account</span>
+                            </span>
+                            </a>
+                            <a class="button" href="/accounts/login">
+                            <span class="icon-text">
+                                <span class="icon">
+                                    <i class="fas fa-sign-in-alt"></i>
+                                </span>
+                                <span>Login</span>
+                            </span>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
     {% endblock %}
 </header>
-<main id="app">
+
+<main class="container">
     {% block main %}
-        <p>Base Template</p>
+        Base template
     {% endblock %}
 </main>
-<footer>
-    {% block footer %}
-    {% endblock %}
-</footer>
 
 {% block global_scripts %}
-<!--<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>-->
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 {% endblock %}
 
 {% block scripts %}
 {% endblock %}
 
- </body>
- </html>
+</body>
+</html>

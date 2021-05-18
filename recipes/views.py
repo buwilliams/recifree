@@ -27,10 +27,6 @@ class Website:
     def new(request):
         return render(request, 'recipes/recipe_new.html', {})
 
-    @staticmethod
-    def homepage(request):
-        return render(request, 'recipes/homepage.html', {})
-
 
 class UserViewSet(viewsets.ModelViewSet):
     """
