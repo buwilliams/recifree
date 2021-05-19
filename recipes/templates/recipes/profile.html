@@ -1,0 +1,19 @@
+{% extends 'recipes/base.html' %}
+
+{% block main %}
+    <section>
+        <h1 class="is-size-4">Recipes for user <strong>{{ username }}</strong></h1>
+        <ul>
+            {% for recipe in recipes %}
+                <li>
+                    <a href="/recipes/{{ recipe.id }}">{{ recipe.title }}</a>
+                </li>
+            {% endfor %}
+            {% if not recipes %}
+                <li>
+                    No recipes added yet.
+                </li>
+            {% endif %}
+        </ul>
+    </section>
+{% endblock %}

@@ -20,12 +20,38 @@ class Website:
 
     @staticmethod
     def recipe(request, recipe_id):
+        is_authenticated = request.user.is_authenticated
         recipe_object = Recipe.objects.get(id=recipe_id)
-        return render(request, 'recipes/recipe_view.html', {'recipe': recipe_object})
+        return render(request, 'recipes/recipe_view.html', {
+            'recipe': recipe_object,
+            'is_authenticated': is_authenticated,
+        })
 
     @staticmethod
     def new(request):
-        return render(request, 'recipes/recipe_new.html', {})
+        is_authenticated = request.user.is_authenticated
+        return render(request, 'recipes/recipe_new.html', {
+            'is_authenticated': is_authenticated,
+        })
+
+    @staticmethod
+    def profile(request, username):
+        is_authenticated = request.user.is_authenticated
+        users = User.objects.filter(username=username)
+        if users:
+            user = users[0]
+            recipes = user.recipe_set
+            return render(request, 'recipes/profile.html', {
+                'is_authenticated': is_authenticated,
+                'recipes': recipes.all(),
+                'username': user.username
+            })
+        else:
+            return render(request, 'recipes/profile.html', {
+                'is_authenticated': is_authenticated,
+                'recipes': [],
+                'username': username
+            })
 
 
 class UserViewSet(viewsets.ModelViewSet):
